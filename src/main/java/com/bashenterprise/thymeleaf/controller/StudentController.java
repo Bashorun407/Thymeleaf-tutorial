@@ -41,4 +41,18 @@ public class StudentController {
         model.addAttribute("student", student);
         return "selection-expression";
     }
+
+    //handler method to handle message expressions request
+    //http://localhost:8080/message-expression
+    @GetMapping("/message-expression")
+    public String messageExpression(){
+        return "message-expression";
+    }
+
+    //handler method to handle link expressions request
+    //http://localhost:8080/link-expression
+    @GetMapping("/link-expression")
+    public String linkExpression(){
+        return "link-expression";
+    }
 }
