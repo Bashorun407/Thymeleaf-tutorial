@@ -51,8 +51,16 @@ public class StudentController {
 
     //handler method to handle link expressions request
     //http://localhost:8080/link-expression
-    @GetMapping("/link-expression")
-    public String linkExpression(){
+    @GetMapping("/link-expression/{id}")
+    public String linkExpression(Model model){
+
+        model.addAttribute("id", 1);
         return "link-expression";
+    }
+
+    //handler method to handle fragment expression
+    @GetMapping("/fragment-expression")
+    public String fragmentExpression(){
+        return "fragment-expression";
     }
 }
