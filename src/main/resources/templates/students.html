@@ -10,6 +10,12 @@
 <table border="1">
     <thead>
     <tr>
+        <th>Serial No.</th>
+        <th>Index</th>
+        <th>Odd</th>
+        <th>Even</th>
+        <th>First</th>
+        <th>Last</th>
         <th>Name</th>
         <th>Email</th>
         <th>Role</th>
@@ -17,7 +23,13 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="student : ${students}">
+    <tr th:each="student, studentStat : ${students}">
+        <td th:text="${studentStat.count}"></td>
+        <td th:text="${studentStat.index}"></td>
+        <td th:text="${studentStat.odd}"></td>
+        <td th:text="${studentStat.even}"></td>
+        <td th:text="${studentStat.first}"></td>
+        <td th:text="${studentStat.last}"></td>
         <td th:text="${student.name}"></td>
         <td th:text="${student.email}"></td>
         <td th:text="${student.role}"></td>

@@ -84,4 +84,24 @@ public class StudentController {
 
         return "students";
     }
+
+    //repeating the method above
+    @GetMapping("/students_list")
+    public String getAllStudents(Model model){
+        Student student1 = new Student("Busayo", "buzy@gmail.com", "deputy", "female");
+        Student student2 = new Student("Alani", "alanz@gmail.com", "finance", "male");
+        Student student3 = new Student("Funke", "funky@gmail.com", "health", "female");
+        Student student4 = new Student("Gbenga", "gbengz@gmail.com", "sport", "male");
+        Student student5 = new Student("Adunni", "adunza@gmail.com", "president", "female");
+
+        List<Student> students = new ArrayList<>();
+        students.add(student1);
+        students.add(student2);
+        students.add(student3);
+        students.add(student4);
+        students.add(student5);
+
+        model.addAttribute("students", students);
+        return "students_list";
+    }
 }
